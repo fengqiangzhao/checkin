@@ -1,5 +1,5 @@
 const juejin = require("./juejin/index");
-const message = require("./common/message");
+const message = require("./common/message/message");
 
 if (process.argv.length === 2) {
   message("Expected a argument like: juejin ...");
