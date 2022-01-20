@@ -13,7 +13,7 @@ let humanTimestamp = (timestamp = null) => {
 
   month = (month < 10 ? "0" : "") + (month + 1);
   day = (day < 10 ? "0" : "") + day;
-  hour = (hour < 10 ? "0" : "") + hour;
+  hour = (hour < 10 ? "0" : "") + hour + 8;
   min = (min < 10 ? "0" : "") + min;
   sec = (sec < 10 ? "0" : "") + sec;
 

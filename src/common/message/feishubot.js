@@ -56,7 +56,7 @@ class FeishuBot {
       }).then(() => {
         this.text = "";
       });
-    }, 1000);
+    }, 2000);
   }
 }
 
