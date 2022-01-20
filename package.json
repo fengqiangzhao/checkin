@@ -1,0 +1,21 @@
+{
+  "name": "checkin",
+  "version": "1.0.0",
+  "description": "自动签到脚本",
+  "main": "main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": [
+    "掘金",
+    "签到",
+    "抽奖",
+    "沾喜气"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.25.0",
+    "jest": "^27.4.7"
+  }
+}
