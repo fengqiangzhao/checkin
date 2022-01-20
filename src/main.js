@@ -1,7 +1,8 @@
 const juejin = require("./juejin/index");
+const message = require("./common/message");
 
 if (process.argv.length === 2) {
-  console.error("Expected a argument like: juejin ...");
+  message("Expected a argument like: juejin ...");
   process.exit(1);
 }
 
