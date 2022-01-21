@@ -38,6 +38,7 @@ jobs:
       - name: Run
         run: |
           COOKIE='${{ secrets.COOKIE }}' FEISHUBOT_WEBHOOK='${{ secrets.FEISHUBOT_WEBHOOK }}' FEISHUBOT_SECRET='${{ secrets.FEISHUBOT_SECRET }}' npm start juejin
+          sleep 5
           COOKIE='${{ secrets.COOKIE2 }}' FEISHUBOT_WEBHOOK='${{ secrets.FEISHUBOT_WEBHOOK }}' FEISHUBOT_SECRET='${{ secrets.FEISHUBOT_SECRET }}' npm start juejin
         env:
           CI: true
