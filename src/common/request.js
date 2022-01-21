@@ -7,9 +7,7 @@ const defaultOptions = {
   data: {},
   params: {},
   headers: {
-    origin: "https://juejin.cn",
     pragma: "no-cache",
-    referer: "https://juejin.cn/",
     "sec-ch-ua": '" Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"',
     "sec-ch-ua-mobile": "?0",
     "sec-fetch-dest": "empty",
@@ -28,7 +26,7 @@ const Request = (options) => {
         resolve(response);
       })
       .catch((err) => {
-        message(err.message);
+        message(`error: ${err.message}`);
         reject(err);
       });
   });

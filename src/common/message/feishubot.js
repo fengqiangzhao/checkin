@@ -53,7 +53,8 @@ class FeishuBot {
         content: {
           text: this.text
         }
-      }).then(() => {
+      }).then((data) => {
+        console.log(data);
         this.text = "";
       });
     }, 3000);

@@ -13,7 +13,7 @@ let dipLucky = async () => {
 };
 
 module.exports = async () => {
-  message("掘金打卡通知:");
+  message("掘金 签到通知:");
   const today_status = await api.hadCheckIn();
   if (today_status) {
     message("今日已签到");

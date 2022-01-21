@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: juejin checkin
+name: fastfrog checkin
 
 # Controls when the workflow will run
 on:
-  # 定时任务北京时间每天10点
+  # 定时任务北京时间每天11点
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 3 * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,8 +37,6 @@ jobs:
       # Run
       - name: Run
         run: |
-          JUEJIN_COOKIE='${{ secrets.JUEJIN_COOKIE }}' FEISHUBOT_WEBHOOK='${{ secrets.FEISHUBOT_WEBHOOK }}' FEISHUBOT_SECRET='${{ secrets.FEISHUBOT_SECRET }}' npm start juejin
-          sleep 5
-          JUEJIN_COOKIE='${{ secrets.JUEJIN_COOKIE2 }}' FEISHUBOT_WEBHOOK='${{ secrets.FEISHUBOT_WEBHOOK }}' FEISHUBOT_SECRET='${{ secrets.FEISHUBOT_SECRET }}' npm start juejin
+          FASTFROG_TOKEN='${{ secrets.FASTFROG_TOKEN }}' FEISHUBOT_WEBHOOK='${{ secrets.FEISHUBOT_WEBHOOK }}' FEISHUBOT_SECRET='${{ secrets.FEISHUBOT_SECRET }}' npm start fastfrog
         env:
           CI: true

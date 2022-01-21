@@ -1,4 +1,5 @@
 const juejin = require("./juejin/index");
+const fastfrog = require("./fastfrog/index");
 const message = require("./common/message/message");
 
 if (process.argv.length === 2) {
@@ -11,4 +12,6 @@ let project = process.argv[2];
 switch (project) {
   case "juejin":
     juejin();
+  case "fastfrog":
+    fastfrog();
 }

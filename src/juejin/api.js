@@ -13,13 +13,19 @@ const API = {
 };
 
 const request = (options) => {
-  options.headers = { cookie: config.COOKIE };
+  options.headers = {
+    cookie: config.COOKIE,
+    origin: "https://juejin.cn",
+    referer: "https://juejin.cn/"
+  };
+
   return Request(options).then((res) => {
     let data = res.data || {};
     if (data.err_no === 0) {
       return data.data;
     } else {
       message(data.err_msg);
+      throw new Error(`Error: ${data.err_msg}`);
     }
   });
 };
