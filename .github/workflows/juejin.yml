@@ -6,7 +6,7 @@ name: juejin_checkin
 on:
   # 定时任务北京时间每天10点
   schedule:
-    - cron: "*/3 * * * *"
+    - cron: "30 3 * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

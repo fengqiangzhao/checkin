@@ -1,7 +1,10 @@
-let humanTimestamp = (timestamp = null) => {
+let humanTimestamp = (timestamp = null, timezone = 8) => {
   if (timestamp == null) {
     timestamp = Date.now();
   }
+  let offsetGMT = new Date().getTimezoneOffset() * 60 * 1000;
+  let offsetTimezone = timezone * 60 * 60 * 1000;
+  timestamp += offsetGMT + offsetTimezone;
   let date = new Date(timestamp);
 
   let year = date.getFullYear();
@@ -11,9 +14,9 @@ let humanTimestamp = (timestamp = null) => {
   let min = date.getMinutes();
   let sec = date.getSeconds();
 
-  month = (month < 10 ? "0" : "") + (month + 1);
+  month = (month < 10 ? "0" : "") + month;
   day = (day < 10 ? "0" : "") + day;
-  hour = (hour < 10 ? "0" : "") + hour + 8;
+  hour = (hour < 10 ? "0" : "") + hour;
   min = (min < 10 ? "0" : "") + min;
   sec = (sec < 10 ? "0" : "") + sec;
 
