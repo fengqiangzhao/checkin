@@ -26,7 +26,6 @@ const Request = (options) => {
         resolve(response);
       })
       .catch((err) => {
-        message(`error: ${err.message}`);
         reject(err);
       });
   });

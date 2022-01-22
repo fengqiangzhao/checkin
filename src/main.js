@@ -12,6 +12,10 @@ let project = process.argv[2];
 switch (project) {
   case "juejin":
     juejin();
+    break;
   case "fastfrog":
     fastfrog();
+    break;
+  default:
+    message(`Unsupport porject: ${project}`);
 }

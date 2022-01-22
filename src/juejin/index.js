@@ -1,5 +1,5 @@
 const api = require("./api");
-const message = require("../common/message/message");
+const { juejinMessage } = require("./utils");
 
 let dipLucky = async () => {
   const randomNumber = Math.floor(Math.random() * 5);
@@ -13,23 +13,22 @@ let dipLucky = async () => {
 };
 
 module.exports = async () => {
-  message("掘金 签到通知:");
   const today_status = await api.hadCheckIn();
   if (today_status) {
-    message("今日已签到");
+    juejinMessage("今日已签到");
   } else {
     const { sum_point } = await api.checkin();
-    message(`签到成功! 当前积分: ${sum_point}`);
+    juejinMessage(`签到成功! 当前积分: ${sum_point}`);
   }
 
   const { free_count } = await api.hadFreeLottery();
   if (free_count === 0) {
-    message("今日已经免费抽奖");
+    juejinMessage("今日已经免费抽奖");
   } else {
     const { lottery_name } = await api.lottery();
-    message(`抽奖成功! 获得: ${lottery_name}`);
+    juejinMessage(`抽奖成功! 获得: ${lottery_name}`);
   }
 
   let dipMsg = await dipLucky();
-  message(dipMsg);
+  juejinMessage(dipMsg);
 };

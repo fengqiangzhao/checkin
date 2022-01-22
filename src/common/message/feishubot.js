@@ -38,7 +38,7 @@ class FeishuBot {
     return p;
   }
 
-  sendText(message) {
+  deferSendText(message) {
     if (this.timer) {
       clearTimeout(this.timer);
       this.timer = null;
@@ -58,6 +58,21 @@ class FeishuBot {
         this.text = "";
       });
     }, 3000);
+  }
+
+  sendText(message) {
+    message = `${humanTimestamp()} ${message} \n`;
+    this.send({
+      timestamp: this.timestamp,
+      sign: this.sign,
+      msg_type: "text",
+      content: {
+        text: message
+      }
+    }).then((response) => {
+      let data = response.data;
+      console.log(`飞书BOT:status:${data.StatusCode},msg:${data.StatusMessage}`);
+    });
   }
 }
 

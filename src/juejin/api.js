@@ -1,4 +1,4 @@
-const message = require("../common/message/message");
+const { juejinMessage } = require("./utils");
 const Request = require("../common/request");
 const config = require("../../config/juejin");
 
@@ -24,8 +24,8 @@ const request = (options) => {
     if (data.err_no === 0) {
       return data.data;
     } else {
-      message(data.err_msg);
-      throw new Error(`Error: ${data.err_msg}`);
+      juejinMessage(`url:${options.url},err:${data.err_msg}`);
+      throw new Error(`url:${options.url},err:${data.err_msg}`);
     }
   });
 };
